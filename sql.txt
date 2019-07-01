@@ -1,0 +1,361 @@
+1.课程体系
+阶段1(服务器端开发):项目导入/数据库/JS基础/NODEJS
+  阶段2(前端核心技术):HTML/AJAX/CSS/bootstrap
+  阶段3(前端进阶技术):JS高级/DOM&BOM/jquery/Vue
+  阶段4(H5移动开发):Vue组件库/HTML5/微信开发/HybridAPP
+  阶段5(框架技术):Angular/React/Python
+2.Windows操作系统常用快键键
+ Window+e  打开”资源管理器”
+ Window+d  显示/隐藏桌面
+ Alt+Tab  切换窗口(向右)
+ Alt+Shift+Tab  切换窗口(向左)
+ Window+r  打开运行窗口    cmd/calc/mspaint
+ Alt+F4  关闭当前的窗口
+
+
+3.软件工程
+ Ada -> bug -> debug
+ IBM -> dos -> Microsoft -> Windows 
+ 程序设计阶段->软件设计阶段->软件工程阶段
+ 软件工程：研究和应用如何系统性的、规范化的、可定量的过程化方法去开发和维护软件。
+软件过程/软件生命周期
+ (1)软件定义期
+  1)可行性研究阶段——《可行性研究报告》
+技术、人员、资金、时间、政策法规、风俗、回报率
+  2)需求分析阶段——《软件需求说明书》
+功能性需求、非功能性需求
+ (2)软件开发期
+  3)概要设计阶段——架构师
+   技术选型、功能模块划分、数据结构设计
+  4)详细设计阶段——设计师
+   模块实现细节、属性、方法、算法
+  5)编码实现阶段
+   UI设计师——网页效果图
+   前端工程师——把网页效果图转换成html、css、js
+   后端工程师——提供项目中数据
+  6)软件测试阶段
+   软件测试工程师
+ (3)软件维护期
+  7)项目部署阶段
+   将项目部署到服务器
+  8)项目维护阶段
+4.学子商城功能性需求
+ www.codeboy.com  前台
+ www.codeboy.com/admin/login.html   后台
+ 前台子系统/APP子系统
+   商品模块: 首页、搜索、列表、详情
+   用户模块: 注册、登录、收藏夹、用户中心
+   购物车模块: 加入购物车、修改购物车、下单
+ 后台子系统
+   商品模块: 添加、列表、删除、修改
+   用户模块: 列表、删除、详情
+   订单模块: 列表、修改
+5.web项目中的服务器
+ Server: 为客户端提供各种服务的功能强大的计算机
+ 访问服务器
+  (1)服务器地址：域名/IP地址
+    查看域名对应的IP     
+ping  www.codeboy.com
+  (2)对应的服务：端口号
+  (3)提供该服务所使用的协议
+ 
+6.访问自己电脑上的web服务器
+  启动web服务器  /WebServer/start.cmd
+  http://127.0.0.1:80   通过自己电脑的IP地址
+  http://localhost:80   通过自己电脑服务器的域名
+  练习：在public下创建4.html，使用服务器访问该文件
+  获取自己电脑在局域网的IP地址
+   ipconfig   以太网适配器 以太网 -> IPv4地址
+  http://172.163.100.41:80  通过局域网的IP地址访问
+
+ 课后任务
+  (1)复习今天的内容
+  (2)启动服务器，同桌之间使用局域网IP地址相互访问
+  (3)预习MySQL数据库
+
+
+
+
+
+1.数据的存储形式
+ 内存/特定文件/第三方服务器/数据库服务器
+2.什么是数据库
+数据库是按照一定的形式来组织、储存数据，
+目的是为了操作数据——增删改查
+（1）数据库发展历史
+ 网状数据库→层次型数据库→关系型数据库
+ →非关系型数据库nosql
+（2）关系型数据库逻辑结构
+  Server数据库服务器→Database数据库→
+  table表→Row行→Column列
+（3）常见的关系型数据库
+ SQLite  mysql  sql server oracle
+Linux/Windows
+3.使用mysql数据库
+mysql→sun→oracle
+martin→MariaDB
+（1）msysql部署结构
+   服务器端:负责存储/维护数据--银行总行机房
+  C:xampp/maysql/bin/mysqld.exe 启动文件
+  确保端口3306不被占用
+   客户端:负责向数据库发起增删改查--ATM
+  C:xampp/maysql/bin/mysql.exe 客户端工具
+（2）使用客户端链接服务器端
+ mysql.exe -h127.0.0.1 -P3306 -uroot -p
+-h host 主机（IP地址/域名）
+-P port 端口
+-u user 用户名
+-p password 密码
+4.mysql常用的管理命令
+show databases; 显示服务器上当前所有数据库
+quit; 退出服务器的链接
+简写 myasql -uroot
+use 数据库名 进入数据库
+show tables;显示当前数据库所有的的数据表
+desc 表名;描述表中都有哪些列（表头）
+5.SQL 命令
+SQL:Strusctured Query  desc dLanguage（结构化
+查询语言，用于操作关系型数据库服务器，
+对数据执行曾删改查。）
+
+两种执行方式
+   （1）交互模式:客户端输入一行 点击回车 
+  服务器执行一行 适用临时性的查看数据
+   （2）脚本模式:客户端把要执行的命令编写在
+   脚本文件中 一次性的提交给服务器执行 
+   适用于批量的操作数据
+   mysql -uroot<文件路径   回车
+ # 单行注释;/*多行注释;*/ 
+SQL语法规范
+（1）每条SQL命令必须以英文的分号作为结束,
+  一条命令可以跨越多行。
+（2）假如某一条命令出现语法规范,则这条命令
+ 以及后边所有的命令不会再执行.
+（3）SQL不区分大小写,习惯上数据库关键字用
+ 大写,非关键字用小写.
+（4）SQL命令中可以使用单行注释（#..）和多行
+ 注释（/*...*/）注释的内容不会被服务器执行。
+常用的SQL命令:
+
+（1）丢弃数据库，如果存在
+  DROP DATABASE IF EXISTS 数据库名;
+（2）创建新的数据库
+   CREATE DATABASE 数据库名;
+（3）进入创建的数据库
+  USE 数据库名称
+（4）创建保存数据的表
+ CREATE TABLE 表名( INT整数 ,
+ VARCHAR(长度)字符串);
+id name姓名 sex性别 score 成绩
+插入数据
+ INSERT INTO 表名 VALUES('值','值');
+修改数据
+UPDATE 表名 SET 列名称='修改的值',列名
+称='修改的值' WHERE sid(编号)='值';
+删除数据
+DELETE FROM 表名 WHERE id='值';
+查询数据
+SELECT * FROM 表名;
+
+
+插入修改删除查询
+关系型数据库
+ SERVER>DATABASE>TABLE>ROW>COLUMN
+mysql数据库
+服务器端  存储数据  
+客户端  操作数据
+标准sql语句分类 
+DDL:data define language  定义数据结构
+     CREATE/DROP/ALTER
+DML:data manipulate language 操作数据
+   INSERT/DELETE/UPDATE
+DQL:data query language 查询数据
+     SELECT
+DCL:data control language 控制用户权限
+  GRANT(授权)/REVOKE(收权)
+
+1计算机存储字符
+（1）如何存储英文字符
+  ASCII：总共有128个 对所有的英文字母和符号进行编码
+Latin-1：总共有256个 兼容ASCII 同时对欧洲的符号进行编码
+（2）如何存储中文字符
+GB2312：对常用的六千多汉字进行了编码 同时兼容ASCII码
+GBK：对两万多汉字进行了编码 同时兼容GB2312
+BIG5：台湾的繁体字编码 兼容ASCLL码
+Unicode：对世界上主流国家常用的语言进行了编码 兼容ASCII码 不兼容GB2312 GBK BIG5
+具体的存储方案有三种 UTF8-/UTF-16/UTF-32
+中文乱码产生的原因：mysql默认使用Latin-1编码
+（3）解决mysql中文乱码
+ sql脚本文件另存为的编码
+客户端链接服务器端使用的编码（SET NAMES UTF8）
+服务器端创建数据库使用的编码（CHARSET=UTF8）
+
+mysql中的列类型
+创建数据表的时候 制定的列 可以存储的数据类型
+（1）数值型 ---引号可加可不加
+TINYINT 微整型 占一个字节 范围-128~127 
+SMALLINT 小整型 占两个字节 范围-32768~32767
+INT 整型  占四个字节 范围-2147483648~2147483647
+BIGINT 大整型 占8个字节 
+FLOAT 单精度浮点型 占四个字节 最多3.4E38 可能产生计算误差
+DOUBLE 双精度浮点型 占8个字符范围比BIGINT 大的多 可能产生计算误差
+DECIMAL（M,D） 定点小数 不会产生计算误差
+ M代表总的有效位数 D代表小数点后的有效位数
+BOOL 布尔型 只有两个值 TRUE/1 FALSE/0 不能加引号使用
+最终存储的值是1和0 会变成TINYINT来存储 常用于只有两个状态的值 列如性别
+
+ 
+
+（2）日期时间型---必须加引号
+DATE 日期型 2019-12-25
+TIME 时间型14:32:50
+DATATIME 时间日期型 2019-12-25 14:32:50
+
+（3）字符串类型---必须加引号
+VARCHAR（M） 变长字符串 不会产生空间浪费 操作速度相对慢 M最大值是65535
+ 常用于存储姓名 文章标题 内容...
+CHAR（M）定长字符串 可能产生空间浪费  操作速度相对快 M最大值是255
+ 常用于存储 手机号码 身份证号码 固定长度的数据
+ TEXT（M）大型变长字符串 M最多是2G 
+
+
+TB>GB>MB>KB>BYTE>BIT（位）
+1byte=8bit
+3列约束
+mysql可以对插入的数据进行特定的验证 只有满足条件才
+允许插入到数据表中 否则被认为是非法插入
+列如：一个人的性别只能是男或者女
+CREATE TABLE 表名（列名称 列类型 列约束）
+（1）主键约束--PRIMARY KEY
+声明了主键约束的列上不允许插入重复的值
+一个表中只能有一个主键 通常添加在编号列
+设置主键就不能再插入NULL值
+表中查询的记录会按照主键有小到大排序
+   NULL---空 在插入数据的时候无法确定要保存的值
+   注意  不能加引号 ！NULL和任何值比较都不等
+  包括两个NULL比较
+（2）唯一约束--UNIQUE
+声明了唯一约束的列上不允许插入重复的值
+允许插入NULL而且允许插入多个NULL
+（3）非空约束——NOT NULL
+声明了非空约束的列上不允许插入NULL
+（4）默认值约束——DEFAULT
+可以使用DEFAULT关键字设置默认值
+也可以在表名后插入值的列（列,列）VALUES
+单独给其他列插入值
+（5）检查约束/自定义约束——CHECK
+检查约束可以对要插入的数据进行自定义的验证
+列名 TINYINT CHECK(列名>=0 AND 列名 score<=100);
+mysql不支持检查约束，会降低数据的插入速度
+（6）外键约束——FOREIGN KEY
+声明了外键约束的列上 取值必须在另一个表的主键列上出现过
+而且要求两者的列类型要求一致
+FOREIGN KEY (外键列名) REFERENCES 引用表(引用列名)
+2MYSQL的自增列
+AUTO_INCREMENT:自动增长 假如一个列上声明了自增列
+无需手动赋值 直接赋值为NULL 就会获取当前的最大值 然后
+加1插入
+用法：加在主键后面 值为NULL NULL 值为当前最大值+1
+注意：
+    只适用于整数型的主键列
+    自增列允许手动赋值
+3 简单查询
+（1）查询特定的列
+SELECT 列名,列名 FROM 表名;
+（2）查询所有的列
+SELECT * FROM 表名;
+（3）为列取别名
+SELECT eanme AS 姓名,salary AS 工资 FROM emp;
+在给列取别名的时候AS 可以省略 保留空格 
+（4）显示不同的记录/合并相同项
+SELECT DISTINCT 列名 FROM 表名;
+（5）查询时执行计算
+SELECT enme,salary*12 from emp;
+（6）查询的结果及排序
+                    从小到大
+SELECT * FROM 表名ORDER BY 列名 ASC;
+                     从大到小
+SELECT * FROM 表名ORDER BY 列名 DESC;
+ORDER BY 可以按照数值 日期 时间字符串排序
+默认按照ASC升序排列
+  （7）条件查询
+SELECT * FROM 表名 WHERE 列='值';
+比较运算符 >= <= < >  != 
+AND/OR
+BETWEEN...AND.../NOT BETWEEN... AND...
+IS NULL/IS NOT NULL
+IN()/NOT IN()
+（8）模糊条件查询
+LIKE
+ SELECT *FROM 表名 WHERE 列名 LIKE '%A%';
+%可以匹配任意多个字符>=0
+_可以匹配任意一个字符 =1
+以上两个匹配符号 必须使用LIKE关键字
+（9）分页查询
+查询的结果集中有太多的数据 一次显示不完 
+可以分页显示
+需要两个条件：页面的数据量 当前的页码
+任意一页开始的值=（当前页码-1）*页面数据量;
+ SELECT * FROM 表名 LIMIT START,COUNT;
+START:开始的值
+COUNT:每页的数据量
+不能加引号、取值必须是数值不能使用字符串
+
+4复杂查询
+（1）聚合查询/分组查询
+聚合函数：SELECT COUNT(列名) FROM 表名;
+推荐写法：SELECT COUNT(*) FROM 表名;
+函数是一个功能体 提供若干个数据
+COUNT()/SUM()/MAX()/MIN()/AVG
+YEAR 年 MONTH 月 
+分组查询只能查询聚合函数和分组条件
+先分组再聚合
+ SELECT 函数(),分组条件 FROM 表名 GROUP BY 分组;
+（2）子查询
+把一个SQL语句的查询结果作为另一个SQL语句的条件
+（3）多表查询/跨表查询
+多表查询避免产生笛卡尔积 给查询添加条件
+select ename,dnme from emp,dept where deptid=did;
+以上查询方式无法查询出没有部门的员工
+也无法查询没有员工的部门这是sql-92中的多表查询语法
+在sql-99中提出了新的查询语法
+（1）内连接 表名INNERT JOIN表名ON条件 和SQL92结果一样
+SELECT ename,dname FROM emp INNER JOIN dept
+ON deptid=did;
+（2）左外连接
+SELECT ename,dnme FROM emp LEFT OUTER 
+ JOIN dept ON deptid=did;
+查询结果是左侧表中所有的记录都显示
+OUTER可以省略
+（3）右外连接
+SELECT ename,dnme FROM emp RIGHT OUTER 
+ JOIN dept ON deptid=did;
+查询的结果是右侧表中所有记录都显示
+（4）全连接 FULL JOIN...ON.....
+显示左侧和右侧表中所有记录mysql不支持
+UNION 合并相同的项
+UNION ALL不合并相同的项
+
+alter修改表的结构
+alter table 表名 add 列名 列类型 约束；
+修改列的类型
+alter table 表名 modify 列名 列类型 列约束
+修改表 删除列
+alter table 表名 drop 列名
+删除主键
+alter table 表名 drop primary key；
+删除表
+drop table 表名；
+修改表名
+renane table 表名 to 新表名；
+
+truncate table 表名;  直接将表删除，创建一个新表
+delete from 表名;   一条条删除不清空
+
+
+
+ 
+       
+
+
+
